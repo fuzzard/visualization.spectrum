@@ -326,10 +326,7 @@ extern "C" void Render()
   glPopMatrix();
   glDisable(GL_DEPTH_TEST);
   glEnable(GL_BLEND);
-}
 
-extern "C" void Start(int iChannels, int iSamplesPerSec, int iBitsPerSample, const char* szSongName)
-{
   int x, y;
 
   for(x = 0; x < 16; x++)
@@ -346,6 +343,11 @@ extern "C" void Start(int iChannels, int iSamplesPerSec, int iBitsPerSample, con
   x_angle = 20.0;
   y_angle = 45.0;
   z_angle = 0.0;
+}
+
+extern "C" void Start(int x, int y, int w, int h, void* device, float ratio,
+                      int iChannels, int iSamplesPerSec, int iBitsPerSample, const char* szSongName)
+{
 }
 
 extern "C" void AudioData(const float* pAudioData, int iAudioDataLength, float *pFreqData, int iFreqDataLength)
